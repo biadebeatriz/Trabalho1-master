@@ -9,9 +9,8 @@ import zumbi.Interfaces.IRedutorPossibilidades.*;
 //import zumbi.Componentes.*;
 import zumbi.Componentes.RedutorPossibilidades.FabricaRedutor;
 
-public class ConsultarG {
+public class ConsultarAn {
     public static void main(){
-
         // instanciando o componente DataSet
         IDataSet dataset = new DataSetComponent();
         dataset.setDataSource("/home/DAITAN/bsiqueira/IdeaProjects/Trabalho1-master/zombie-health-spreadsheet-ml-training.csv");
@@ -35,7 +34,7 @@ public class ConsultarG {
 // conectando-a a componente dataset
         nextQuestion.connect(dataset);
 
-         //IView view = new View();
+        IView view = new View();
 
 
 // Instanciando o componente attTable
@@ -43,7 +42,7 @@ public class ConsultarG {
 // Conectando-o ao componente dataset e redutor
         attTable.connect(dataset);
         attTable.connect(redutor);
-      //  attTable.connect(view);
+        attTable.connect(view);
 
 // Conectando-o ao componente graphiccreator e nextQuestion, segundo o pattern Observer
         attTable.attach(cgraphic);

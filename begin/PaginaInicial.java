@@ -36,19 +36,25 @@ public class PaginaInicial {
         ImageIcon icon = new ImageIcon(sc);
         JLabel imagi = new JLabel(icon);
 
-        ActionListener actionListener = new AnActionListener();
+        ActionListener actionListenerG = new AnActionListener();
+        ActionListener actionListenerAn = new AnActionListenerAn();
 
 
         //Bottao
-        JButton button = new JButton("CLIQUE AQUI PARA SALVAR O ZOMBIE");
-        button.setPreferredSize(new Dimension(50,50));
-        button.addActionListener(actionListener);
+        JButton buttonA = new JButton("ANIMATION");
+        buttonA.setBounds(10, 400, 100, 40);
+        JButton buttonG = new JButton("TABELA");
+        buttonG.setBounds(375, 400, 100, 40);
+        //button.setPreferredSize(new Dimension(50,50));
+        buttonA.addActionListener(actionListenerAn);
+        buttonG.addActionListener(actionListenerG);
 
         //Set the menu bar and add the label to the content pane.
         frame.setJMenuBar(greenMenuBar);
         frame.getContentPane().add(yellowLabel, BorderLayout.CENTER);
-        frame.getContentPane().add(imagi);
-        frame.getContentPane().add(button, BorderLayout.PAGE_END);
+        frame.getContentPane().add(imagi, BorderLayout.CENTER);
+        frame.getContentPane().add(buttonA, BorderLayout.EAST);
+        frame.getContentPane().add(buttonG, BorderLayout.WEST);
 
         //Display the window.
         frame.pack();

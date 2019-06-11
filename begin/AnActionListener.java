@@ -19,7 +19,6 @@ public class  AnActionListener implements ActionListener {
         System.out.println("Apertou o botao.");
         ConsultarG con  = new ConsultarG();
         con.main();
-        // Principal pri = new Principal();
-        //  pri.main();
+
     }
 }

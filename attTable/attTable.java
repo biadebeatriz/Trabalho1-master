@@ -45,14 +45,17 @@ public class attTable implements IattTable{
 			receptacle.updateTable(instances);
 	}
 
-	public void giveDiagnostic(String doenca){
-	    this.View.diagnostico(doenca);
-    }
+	public void giveDiagnostic(String doenca) {
+		if (this.View != null) {
+			this.View.diagnostico(doenca);
+		}
+	}
 
 	public void update(int pergunta, String resposta) {
 		System.out.println("Atribuots" + attributes[pergunta]);
-
-	    this.View.updateV(this.attributes, pergunta, resposta);
+		if(this.View!=null) {
+			this.View.updateV(this.attributes, pergunta, resposta);
+		}
 		System.out.println("instancias antes");
     	for (int i = 0; i < instances.length ; i++) {
     		for (int j =0 ; j < instances[0].length ; j++) {
