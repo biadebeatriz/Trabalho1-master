@@ -42,14 +42,14 @@ public class View implements IView{
     }
 
     public void diagnostico(String doenca){
-        falas.add("You have " + doenca);
+        falas.add("Your disease is " + doenca);
         personagens.add("doctor");
         falas.add("OMG VOU TE  COMER");
-        falas.add("pacient");
+        personagens.add("pacient");
         String[] f = this.falas.toArray(new String[0]);
         String[] p = this.personagens.toArray(new String[0]);
-        System.out.println(f);
-        System.out.println(p);
+        System.out.println(this.falas);
+        System.out.println(this.personagens);
         this.animation.story(f, p);
     }
 
@@ -62,9 +62,9 @@ public class View implements IView{
             resposta = " Yes ):";
         }
         else{
-            resposta = " No ):";
+            resposta = " No";
         }
-        this.falas.add(ask);
+        this.falas.add("Do you have " + ask+ "?");
         this.personagens.add("doctor");
         this.falas.add(resposta);
         this.personagens.add("pacient");
