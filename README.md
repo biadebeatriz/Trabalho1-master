@@ -89,6 +89,8 @@ public interface IattTable extends ITableProducerReceptacle{
 	public void notifyReceptacle();
 	public void update(int pergunta, String resposta);
 	public void connect(IRedutorPossibilidades redutor);
+	public void connect(IView view);
+	public void giveDiagnostic(String doenca);
 }
 
 
@@ -104,7 +106,42 @@ Método | Objetivo
 `attach` | Conecta uma componente observadora a ela, afim de a notificar quando a tabela é atualizada.
 `notifyReceptacle` | Notifica as componentes que utilizam a tabela de que ela foi alterada.
 `update` | Atualiza a tabela de acordo com a resposta de uma determinada pergunta feita ao paciente.
-`connect` | Se conecta a componente RedutorPossibilidades
+`connect` | Se conecta a componente RedutorPossibilidades e View
+`giveDiagnostic` | Mostra o diagnóstico na animação
+
+
+# Componente View
+Utilizando a componente comprada UserInterface, essa componente é responsável por conectar a animação com o attTable, afim de mostrar as falas do médico e do paciente.
+
+Campo | Valor
+----- | -----
+Classe | View.View
+Autores | Beatriz Siqueira
+Objetivo | Mostrar as falas do médico e do paciente na animação.
+Interface | IView
+	
+~~~
+
+public interface IView {
+
+    void updateV(String[] atributos, int pergunta, String resp);
+    void diagnostico(String doenca);
+    void begin();
+}
+
+
+~~~
+
+## Detalhamento da Interface
+
+### Interface IView
+Interface provida para ser capaz de guardar as falas dos personagens, afim de as mostrar na animação posteriormente.
+
+Método | Objetivo
+-------| --------
+`updateV` | Atualiza as falas guardadas, adicionando uma pergunta e uma resposta a mais.
+`diagnostico` | Armazena o diagnóstico para mostrá-lo na animação
+
 
 
 # Componentes Compradas
