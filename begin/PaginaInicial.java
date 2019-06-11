@@ -11,9 +11,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 public class PaginaInicial {
-    private static void createAndShowGUI() {
+    public static void createAndShowGUI() {
         //Create and set up the window.
-        JFrame frame = new JFrame("Unhealh Zombie");
+        JFrame frame = new JFrame("GRUPO 1");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel panel = new JPanel();
@@ -32,7 +32,7 @@ public class PaginaInicial {
 
         //Imagem do zombie
         ImageIcon wPic = new ImageIcon("/home/DAITAN/bsiqueira/IdeaProjects/Trabalho1-master/begin/imagens/imagens/zombie/zombie6.jpg");
-        Image sc = wPic.getImage().getScaledInstance(200,200,Image.SCALE_DEFAULT);
+        Image sc = wPic.getImage().getScaledInstance(300,300,Image.SCALE_DEFAULT);
         ImageIcon icon = new ImageIcon(sc);
         JLabel imagi = new JLabel(icon);
 
@@ -42,10 +42,8 @@ public class PaginaInicial {
 
         //Bottao
         JButton buttonA = new JButton("ANIMATION");
-        buttonA.setBounds(10, 400, 100, 40);
         JButton buttonG = new JButton("TABELA");
-        buttonG.setBounds(375, 400, 100, 40);
-        //button.setPreferredSize(new Dimension(50,50));
+
         buttonA.addActionListener(actionListenerAn);
         buttonG.addActionListener(actionListenerG);
 
@@ -62,16 +60,7 @@ public class PaginaInicial {
         frame.setVisible(true);
     }
 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
 
-                createAndShowGUI();
-            }
-        });
-    }
 
 
 }

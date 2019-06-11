@@ -17,11 +17,13 @@ public class View implements IView{
     public View(){
         animation = new AnimationC();
         this.name = this.generateString(new Random(), "qwertyialskdcn", 10);
-        this.setView("Grupo 1", this.name + "da Silva", "Andre Santache");
+        this.setView("Grupo 1", this.name + "da Silva", "Doctor");
         falas = new ArrayList<String>();
         personagens = new ArrayList<String>();
         falas.add("Hi");
         personagens.add("doctor");
+        falas.add("HELloW I'm sICKKKKKK");
+        personagens.add("pacient");
     }
 
 
@@ -48,17 +50,13 @@ public class View implements IView{
         personagens.add("pacient");
         String[] f = this.falas.toArray(new String[0]);
         String[] p = this.personagens.toArray(new String[0]);
-        System.out.println(this.falas);
-        System.out.println(this.personagens);
         this.animation.story(f, p);
     }
 
     public void updateV(String[] atributos, int pergunta, String resp){
-        System.out.println(resp);
         String resposta;
         String ask = atributos[pergunta];
         if(resp.equals("t")){
-            System.out.println("t");
             resposta = " Yes ):";
         }
         else{
