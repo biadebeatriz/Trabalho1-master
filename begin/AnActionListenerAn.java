@@ -10,7 +10,6 @@ public class  AnActionListenerAn implements ActionListener {
         System.out.println("Apertou o botao.");
         ConsultarAn con  = new ConsultarAn();
         con.main();
-        // Principal pri = new Principal();
-        //  pri.main();
+
     }
 }
