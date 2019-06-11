@@ -75,7 +75,6 @@ public class Doctor  implements IDoctor{
         
         while ((graphicCreator.possibleDiseases()).size() > 1 && n_questions < attributes.length - 1) {
         	next_q = nextQuestion.nextQ();
-        	System.out.println("foi perguntada a doença " + next_q);
         	attTable.update(next_q, responder.ask(attributes[next_q]));
         	graphicCreator.update(attributes[next_q]);
         	System.out.println("Agora há " +(graphicCreator.possibleDiseases()).size()+ "doenças possíveis");
@@ -98,7 +97,6 @@ public class Doctor  implements IDoctor{
         	diagnostic = m_freq;
         }
 
-        
         for (int a = 0; a < attributes.length - 1; a++)
             System.out.println("Question: " + responder.ask(attributes[a]));
 
